@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "447406741153",
+    "firebase_url": "https://navigationdrawer-261f2.firebaseio.com",
+    "project_id": "navigationdrawer-261f2",
+    "storage_bucket": "navigationdrawer-261f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447406741153:android:e68cb4436dbbd4d7",
+        "android_client_info": {
+          "package_name": "com.example.rahul.navigationdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447406741153-md0chtp34071omjo7ur2rioocq55dmr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rahul.navigationdrawer",
+            "certificate_hash": "7046698ff1eb744543f1cea5dc6bb0cb9b0fb1e1"
+          }
+        },
+        {
+          "client_id": "447406741153-84pk5klf6g955bjv3hovb9jvtp622qsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACzAzBQUtuRXKU98N5rfCUmok_oOYwflg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447406741153-84pk5klf6g955bjv3hovb9jvtp622qsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
