@@ -24,25 +24,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.RescueRequestActivity"
+        <activity
+            android:name=".Activities.RescueRequestActivity"
             android:label="Request Rescue"
-            android:parentActivityName=".Activities.MainActivity"/>
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
             android:name=".Activities.RescueRequestDetails"
             android:label="Request Details" />
-        <activity android:name=".Activities.ResourcePostActivity"
+        <activity
+            android:name=".Activities.ResourcePostActivity"
             android:label="Resources"
-            android:parentActivityName=".Activities.MainActivity"/>
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
             android:name=".Activities.ResourceDetailsActivity"
-            android:label="Resource Details"/>
-        <activity android:name=".Activities.MissingActivity"
+            android:label="Resource Details" />
+        <activity
+            android:name=".Activities.MissingActivity"
             android:label="Missing Person"
-            android:parentActivityName=".Activities.MainActivity"/>
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
             android:name=".Activities.MissingDetailsActivity"
-            android:label="Missing Person Details"/>
+            android:label="Missing Person Details" />
 
+        <service
+            android:name=".NotifyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

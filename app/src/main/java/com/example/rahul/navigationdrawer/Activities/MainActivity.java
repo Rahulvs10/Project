@@ -2,7 +2,6 @@ package com.example.rahul.navigationdrawer.Activities;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -18,15 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.rahul.navigationdrawer.Fragments.MainFragment;
 import com.example.rahul.navigationdrawer.Fragments.Resource_fragment;
 import com.example.rahul.navigationdrawer.Fragments.Rescue_fragment;
 import com.example.rahul.navigationdrawer.Fragments.People_fragment;
-import com.example.rahul.navigationdrawer.Fragments.SafeHouse_fragment;
 import com.example.rahul.navigationdrawer.R;
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -96,7 +92,7 @@ public class MainActivity extends AppCompatActivity
             return;
         }
 
-        displaySelectedScreen(R.id.nav_camera);
+        displaySelectedScreen(R.id.nav_manage);
     }
 
     @Override
@@ -182,7 +178,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new People_fragment();
                 break;
             case R.id.nav_manage:
-                fragment = new SafeHouse_fragment();
+                fragment = new MainFragment();
                 break;
         }
 

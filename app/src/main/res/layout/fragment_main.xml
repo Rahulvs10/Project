@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,20 +10,26 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_gravity="center"
+            android:text="Recent Posts"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@android:color/black" />
+
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layout1"
             android:orientation="vertical"
             android:padding="16dp"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/distance1"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:text="place holder text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/mainText1"
@@ -46,20 +52,19 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@android:color/black" />
+
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layout2"
             android:orientation="vertical"
             android:padding="16dp"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/distance2"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:text="place holder text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/mainText2"
@@ -82,10 +87,17 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@android:color/black" />
+
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layout3"
             android:orientation="vertical"
             android:padding="16dp"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -117,5 +129,24 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@android:color/black" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:text="No more post"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
-</FrameLayout>
+</ScrollView>

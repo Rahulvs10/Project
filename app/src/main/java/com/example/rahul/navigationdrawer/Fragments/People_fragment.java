@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rahul.navigationdrawer.Activities.MissingActivity;
@@ -53,6 +54,7 @@ public class People_fragment extends Fragment {
     ListView listView;
     People_adapter adapter;
     List<People> rescue_list;
+    ProgressBar progressBar;
 
 
     @Override
@@ -64,6 +66,7 @@ public class People_fragment extends Fragment {
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("missing");
         rescue_list = new ArrayList<>();
 
+        progressBar = rootView.findViewById(R.id.progress_bar);
         listView = rootView.findViewById(R.id.listView);
         adapter = new People_adapter(getActivity(),R.layout.list_item1,rescue_list);
         listView.setAdapter(adapter);
@@ -76,6 +79,7 @@ public class People_fragment extends Fragment {
                     People people = dataSnapshot.getValue(People.class);
                     if(people != null)
                         adapter.add(people);
+                    progressBar.setVisibility(View.GONE);
                 }
 
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {}

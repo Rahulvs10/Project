@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rahul.navigationdrawer.Activities.RescueRequestActivity;
@@ -50,6 +51,7 @@ public class Rescue_fragment extends Fragment {
     double lat, lon;
     Rescue_adapter adapter;
     List<Rescue> rescue_list;
+    ProgressBar progressBar;
 
 
     @Override
@@ -60,6 +62,7 @@ public class Rescue_fragment extends Fragment {
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Rescue_request");
 
 
+        progressBar = rootView.findViewById(R.id.progress_bar);
         getLocation();
         rescue_list = new ArrayList<Rescue>();
         listView = rootView.findViewById(R.id.listView);
@@ -115,6 +118,7 @@ public class Rescue_fragment extends Fragment {
                                         Rescue rescue = dataSnapshot.getValue(Rescue.class);
                                         if(rescue != null)
                                             adapter.add(rescue);
+                                        progressBar.setVisibility(View.GONE);
                                     }
 
                                     public void onChildChanged(DataSnapshot dataSnapshot, String s) {}

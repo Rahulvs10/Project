@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.example.rahul.navigationdrawer.Activities.RescueRequestDetails;
 import com.example.rahul.navigationdrawer.Activities.ResourceDetailsActivity;
@@ -50,6 +51,7 @@ public class Resource_fragment extends Fragment {
     double lat, lon;
     Resource_adapter adapter;
     List<Resource> resourceList;
+    ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +61,7 @@ public class Resource_fragment extends Fragment {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Resource");
 
+        progressBar = rootView.findViewById(R.id.progress_bar);
         getLocation();
         resourceList = new ArrayList<Resource>();
         listView = rootView.findViewById(R.id.listView);
@@ -112,6 +115,7 @@ public class Resource_fragment extends Fragment {
                                         Resource resource = dataSnapshot.getValue(Resource.class);
                                         if(resource != null)
                                             adapter.add(resource);
+                                        progressBar.setVisibility(View.GONE);
                                     }
 
                                     public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
