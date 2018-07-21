@@ -1,6 +1,7 @@
 package com.example.rahul.navigationdrawer.Activities;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,6 +22,7 @@ import com.example.rahul.navigationdrawer.Fragments.MainFragment;
 import com.example.rahul.navigationdrawer.Fragments.Resource_fragment;
 import com.example.rahul.navigationdrawer.Fragments.Rescue_fragment;
 import com.example.rahul.navigationdrawer.Fragments.People_fragment;
+import com.example.rahul.navigationdrawer.NotifyService;
 import com.example.rahul.navigationdrawer.R;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -120,32 +122,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_Logout) {
-            AuthUI.getInstance().signOut(this);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public void onSignedIn(String username, String ID){
         mUID = ID;
         mUsername = username;
+        Intent intent = new Intent(MainActivity.this, NotifyService.class);
+        MainActivity.this.startService(intent);
     }
     public void onSignedOut(){
         mUsername = ANONYMOUS;
@@ -179,6 +160,12 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_manage:
                 fragment = new MainFragment();
+                break;
+            case R.id.logout:
+                AuthUI.getInstance().signOut(this);
+                break;
+            case R.id.exit:
+                finish();
                 break;
         }
 

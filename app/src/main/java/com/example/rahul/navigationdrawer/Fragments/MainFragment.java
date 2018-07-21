@@ -139,7 +139,6 @@ public class MainFragment extends Fragment {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     final People people = dataSnapshot.getValue(People.class);
-                    progressBar.setVisibility(View.GONE);
                     if(people != null)
                     {
                         mainText3.setText(people.getName()+", "+people.getAge()+" years old");
@@ -167,6 +166,7 @@ public class MainFragment extends Fragment {
                 public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
                 public void onCancelled(DatabaseError databaseError) {}
             };
+            progressBar.setVisibility(View.GONE);
             mMessagesDatabaseReference2.addChildEventListener(mChildEventListener3);
         }
 
